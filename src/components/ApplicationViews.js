@@ -47,11 +47,13 @@ export const ApplicationViews = (props) => {
                 </LocationProvider>
             </EmployeeProvider>
 
-            <CustomerProvider>
-                <Route exact path="/customers">
-                    <CustomerList />
-                </Route>
-            </CustomerProvider>
+            <CustomerCandyProvider>
+                <CustomerProvider>
+                    <Route exact path="/customers">
+                        <CustomerList />
+                    </Route>
+                </CustomerProvider>
+            </CustomerCandyProvider>
 
 
 

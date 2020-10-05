@@ -1,9 +1,13 @@
 import React from "react"
 import "./Customer.css"
 
-export const CustomerCard = ({ customer }) => (
+export const CustomerCard = ({ customer }) => {
+    
+    
+    
+    return(
     <section className="customer">
         <h3 className="customer__name">{customer.name}</h3>
-        <address className="customer__address">{customer.address}</address>
+        <div className="customer__candy">Candies Purchsed: {customer.customerCandy.length}</div>
     </section>
-)
+)}

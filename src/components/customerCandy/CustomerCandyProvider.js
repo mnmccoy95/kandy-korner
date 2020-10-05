@@ -14,7 +14,7 @@ export const CustomerCandyProvider = (props) => {
     const customer = sessionStorage.getItem("kandy_customer")
 
     const getCustomerCandy = () => {
-        return fetch(`http://localhost:8088/customerCandy?_expand=customer&_expand=product&customerId=${customer}`)
+        return fetch(`http://localhost:8088/customerCandy?_expand=customer&_expand=product`)
             .then(res => res.json())
             .then(setCustomerCandy)
     }

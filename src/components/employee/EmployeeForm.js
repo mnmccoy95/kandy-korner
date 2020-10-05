@@ -85,7 +85,7 @@ export const EmployeeForm = (props) => {
                             manager = false
                         }
                     }} name="manager" value="Manager"></input>
-                    <label for="manager">Manager</label>
+                    <label htmlFor="manager">Manager</label>
                 </div>
             </fieldset>
             <fieldset>
@@ -98,7 +98,7 @@ export const EmployeeForm = (props) => {
                             fullTime = false
                         }
                     }} name="fullTime" value="Full Time"></input>
-                    <label for="fullTime">Full Time</label>
+                    <label htmlFor="fullTime">Full Time</label>
                 </div>
             </fieldset>
             <fieldset>

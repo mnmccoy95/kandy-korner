@@ -5,10 +5,12 @@ import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
 import { ProductProvider } from "./product/ProductProvider"
 import { ProductList } from "./product/ProductList"
-import { ProductDetail } from "./product/ProductDetail"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeForm } from "./employee/EmployeeForm"
 import { EmployeeList } from "./employee/EmployeeList"
+import { CustomerProvider } from "./customer/CustomerProvider"
+import { CustomerList } from "./customer/CustomerList"
+import { CustomerCandyProvider } from "./customerCandy/CustomerCandyProvider"
 
 export const ApplicationViews = (props) => {
     return (
@@ -24,16 +26,13 @@ export const ApplicationViews = (props) => {
                 </Route>
             </LocationProvider>
 
-            <ProductProvider>
-                <Route exact path="/products">
-                    <ProductList />
-                </Route>
-
-                <Route exact path="/products/:id">
-                    <ProductDetail/>
-                </Route>
-
-            </ProductProvider>
+            <CustomerCandyProvider>
+                <ProductProvider>
+                    <Route exact path="/products">
+                        <ProductList />
+                    </Route>
+                </ProductProvider>
+            </CustomerCandyProvider>
 
             <EmployeeProvider>
                 <Route exact path="/employees">
@@ -46,9 +45,13 @@ export const ApplicationViews = (props) => {
                         <EmployeeForm />
                     </Route>
                 </LocationProvider>
-
-
             </EmployeeProvider>
+
+            <CustomerProvider>
+                <Route exact path="/customers">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
 
 
 

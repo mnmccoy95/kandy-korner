@@ -10,7 +10,6 @@ export const EmployeeList = () => {
 	
 	//useEffect - reach out to the world for something
     useEffect(() => {
-		console.log("EmployeeList: useEffect - getEmployees")
 		getEmployees()
 		
     }, [])

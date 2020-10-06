@@ -16,6 +16,7 @@ export const CustomerList = () => {
 		
     }, [])
 
+    
 
     return (	
 		<div className="customers">

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import "./Product.css"
 import { CustomerCandyContext } from "../customerCandy/CustomerCandyProvider"
 
 export const ProductCard = ({ product }) => {
-    const { getCustomerCandy, addCustomerCandy } = useContext(CustomerCandyContext)
+    const { addCustomerCandy } = useContext(CustomerCandyContext)
     const customer = parseInt(localStorage.getItem("kandy_customer"))
 
     return (

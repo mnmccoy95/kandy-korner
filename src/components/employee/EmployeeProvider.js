@@ -29,15 +29,16 @@ export const EmployeeProvider = (props) => {
             .then(getEmployees)
     }
 
-    /*
-        You return a context provider which has the
-        `locations` state, the `addLocation` function,
-        and the `getLocation` function as keys. This
-        allows any child elements to access them.
-    */
+    const fireEmployee = employee => {
+        return fetch(`http://localhost:8088/employees/${employee.id}`, {
+            method: "DELETE"
+        })
+        .then(getEmployees)
+    }
+
     return (
         <EmployeeContext.Provider value={{
-            employees, getEmployees, addEmployee
+            employees, getEmployees, addEmployee, fireEmployee
         }}>
             {props.children}
         </EmployeeContext.Provider>

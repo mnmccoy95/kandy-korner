@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { ProductContext } from "./ProductProvider"
 import { ProductCard } from "./ProductCard"
-import { useHistory } from 'react-router-dom';
 import "./Product.css"
 
 export const ProductList = () => {
@@ -13,9 +12,6 @@ export const ProductList = () => {
 		getProducts()
 		
     }, [])
-
-
-    const history = useHistory()
 
     return (
         <div className="products">

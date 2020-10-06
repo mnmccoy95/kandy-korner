@@ -11,7 +11,6 @@ export const CustomerList = () => {
 	
 	//useEffect - reach out to the world for something
     useEffect(() => {
-		console.log("CustomerList: useEffect - getCustomers")
     getCustomers()
 
 		

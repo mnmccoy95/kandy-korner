@@ -11,7 +11,6 @@ export const CustomerCandyContext = createContext()
  */
 export const CustomerCandyProvider = (props) => {
     const [customerCandy, setCustomerCandy] = useState([])
-    const customer = sessionStorage.getItem("kandy_customer")
 
     const getCustomerCandy = () => {
         return fetch(`http://localhost:8088/customerCandy?_expand=customer&_expand=product`)
@@ -21,7 +20,7 @@ export const CustomerCandyProvider = (props) => {
 
     const addCustomerCandy = (candy, customerId) => {
         const customerCandy = {
-            candyId: candy,
+            productId: candy,
             customerId: customerId
         }
 
@@ -35,6 +34,11 @@ export const CustomerCandyProvider = (props) => {
             .then(getCustomerCandy)
     }
 
+    const getCustomerCandyById = (id) => {
+        return fetch(`http://localhost:8088/customerCandy?_expand=customer&_expand=product&customerId=${id}`)
+        .then(res => res.json())
+    }
+
     /*
         You return a context provider which has the
         `locations` state, the `addLocation` function,
@@ -43,7 +47,7 @@ export const CustomerCandyProvider = (props) => {
     */
     return (
         <CustomerCandyContext.Provider value={{
-            customerCandy, getCustomerCandy, addCustomerCandy
+            customerCandy, getCustomerCandy, addCustomerCandy, getCustomerCandyById
         }}>
             {props.children}
         </CustomerCandyContext.Provider>

@@ -7,7 +7,6 @@ import "./Product.css"
 export const ProductList = () => {
    // This state changes when `getAnimals()` is invoked below
     const { products, getProducts } = useContext(ProductContext)
-    const customer = sessionStorage.getItem("kandy_customer")
 	
 	//useEffect - reach out to the world for something
     useEffect(() => {

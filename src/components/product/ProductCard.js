@@ -5,7 +5,6 @@ import { CustomerCandyContext } from "../customerCandy/CustomerCandyProvider"
 export const ProductCard = ({ product }) => {
     const { getCustomerCandy, addCustomerCandy } = useContext(CustomerCandyContext)
     const customer = parseInt(localStorage.getItem("kandy_customer"))
-    console.log(customer)
 
     return (
     <section className="product">
